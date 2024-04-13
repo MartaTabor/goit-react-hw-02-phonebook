@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
+import css from './SearchBar.module.css';
 
 export const SearchBar = ({ filter, onFilterChange }) => {
   return (
-    <div>
-      <label htmlFor="searchField">Find contacts by name</label>
+    <div className={css.search}>
+      <label className={css.label} htmlFor="searchField">
+        Find contacts by name
+      </label>
       <input
+        className={css.input}
         id="searchField"
         type="text"
         name="filter"

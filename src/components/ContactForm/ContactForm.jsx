@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
+import css from './ContactForm.module.css';
 
 export const ContactForm = ({ userData, onChange, onSubmit }) => {
   return (
-    <form onSubmit={onSubmit}>
-      <label htmlFor="nameField">Name</label>
+    <form className={css.form} onSubmit={onSubmit}>
+      <label className={css.label} htmlFor="nameField">
+        Name
+      </label>
       <input
+        className={css.input}
         id="nameField"
         type="text"
         name="name"
@@ -14,8 +18,11 @@ export const ContactForm = ({ userData, onChange, onSubmit }) => {
         pattern="^[a-zA-Zа-яА-Я]+(([' \\-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         required
       />
-      <label htmlFor="phoneField">Number</label>
+      <label className={css.label} htmlFor="phoneField">
+        Number
+      </label>
       <input
+        className={css.input}
         id="phoneField"
         type="tel"
         name="number"
@@ -25,7 +32,9 @@ export const ContactForm = ({ userData, onChange, onSubmit }) => {
         pattern="\+?\d{1,4}?[ .\\-\\s]?\(?\d{1,3}?\)?[ .\\-\\s]?\d{1,4}[ .\\-\\s]?\d{1,4}[ .\\-\\s]?\d{1,9}"
         required
       />
-      <button type="submit">Add contact</button>
+      <button className={css.button} type="submit">
+        Add contact
+      </button>
     </form>
   );
 };

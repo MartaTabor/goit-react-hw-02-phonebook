@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
-import { ContactForm } from './ContactForm';
-import { SearchBar } from './SearchBar';
-import ContactsList from './ContactsList';
+import { ContactForm } from './ContactForm/ContactForm';
+import { SearchBar } from './SearchBar/SearchBar';
+import ContactsList from './ContactList/ContactsList';
+import css from './App.module.css';
 
 const INITIAL_STATE = {
   contacts: [],
@@ -49,15 +50,15 @@ export const App = () => {
   };
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <div className={css.container}>
+      <h1 className={css.heading}>Phonebook</h1>
       <ContactForm
         userData={userData}
         onChange={onChange}
         onSubmit={onSubmit}
       />
       <SearchBar filter={userData.filter} onFilterChange={handleFilterChange} />
-      <h2>Contacts</h2>
+      <h2 className={css.heading}>Contacts</h2>
       <ContactsList
         contacts={userData.contacts}
         filter={userData.filter}
