@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const SearchBar = ({ filter, onFilterChange }) => {
   return (
     <div>
@@ -12,4 +14,9 @@ export const SearchBar = ({ filter, onFilterChange }) => {
       />
     </div>
   );
+};
+
+SearchBar.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onFilterChange: PropTypes.func.isRequired,
 };
