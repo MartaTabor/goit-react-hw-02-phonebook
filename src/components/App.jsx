@@ -24,7 +24,9 @@ export const App = () => {
 
     const { name, number, contacts } = userData;
 
-    const isExist = contacts.some(contact => contact.name === name.trim());
+    const isExist = contacts.some(
+      contact => contact.name.toLowerCase() === name.trim().toLowerCase()
+    );
     if (isExist) {
       alert(`${name} is already in contacts`);
       return;
