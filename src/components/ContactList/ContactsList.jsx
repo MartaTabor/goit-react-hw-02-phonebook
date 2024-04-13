@@ -9,20 +9,27 @@ const ContactsList = ({ contacts, filter, onDelete }) => {
   return (
     <div>
       {filteredContacts.length > 0 ? (
-        <ul className={css.list}>
+        <table className={css.table}>
+          <tr className={css.theading}>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th className={css.delete}>Delete</th>
+          </tr>
           {filteredContacts.map(contact => (
-            <li className={css.item} key={contact.id}>
-              <p className={css.name}>{contact.name}: </p>
-              <p>{contact.number}</p>
-              <button
-                className={css.button}
-                onClick={() => onDelete(contact.id)}
-              >
-                Delete
-              </button>
-            </li>
+            <tr className={css.tbody} key={contact.id}>
+              <td className={css.name}>{contact.name}: </td>
+              <td>{contact.number}</td>
+              <td>
+                <button
+                  className={css.button}
+                  onClick={() => onDelete(contact.id)}
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
           ))}
-        </ul>
+        </table>
       ) : (
         <p className={css.text}>No contacts</p>
       )}
