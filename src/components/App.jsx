@@ -26,7 +26,7 @@ export const App = () => {
 
     const isExist = contacts.some(contact => contact.name === name.trim());
     if (isExist) {
-      alert(`${name} is alrady in contacts`);
+      alert(`${name} is already in contacts`);
       return;
     }
 
